@@ -1,6 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+cacheComponents:true,
+  images:{
+    remotePatterns:[
+      {
+        protocol:'https',
+        hostname:'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'encrypted-tbn0.gstatic.com', // Add this new block
+      }
+    ]
+  },
+
   async rewrites() {
     return [
       {
